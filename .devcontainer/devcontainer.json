@@ -1,0 +1,36 @@
+{
+    "name": "Raylib C++",
+    "build": {
+      "context": "..",
+      "dockerfile": "../Dockerfile",
+      "args": {
+        "CACHEBUST": "1"
+    }
+    },
+    "workspaceFolder": "/code",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/code,type=bind,consistency=cached",
+    "runArgs": [
+      "--gpus", "all",
+      "--ipc=host",
+      "--env-file=.devcontainer/.env",
+      "--cap-add=SYS_PTRACE",
+      "--security-opt",
+      "seccomp=unconfined"
+    ],
+    "settings": { 
+      // "terminal.integrated.gpuAcceleration": "on",
+      "terminal.integrated.gpuAcceleration": "off",
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+      "ms-vscode.cpptools",
+      "ms-vscode.cmake-tools",
+      "ms-vscode.cpptools-extension-pack",
+      "twxs.cmake",
+      "ms-azuretools.vscode-docker",
+  
+  
+      
+  
+    ],
+  }
